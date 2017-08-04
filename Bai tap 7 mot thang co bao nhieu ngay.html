@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Câu lệnh Switch-Case</title>
+</head>
+<body>
+<div align="center">
+    <h1>Kiểm tra một tháng có bao nhiêu ngày</h1>
+    <input type="number" max="12" min="1" id="month" style="width: 80px">
+    <button type="button" style="width: 100px" onclick="songay()">Tính số ngày</button>
+</div>
+    <p align="center" style="font-weight: bold; font-size: large" id='ketqua'></p>
+<script>
+    function songay() {
+        var Month = parseInt(document.getElementById('month').value);
+        switch (Month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById('ketqua').innerHTML = "Tháng " + Month + " có 31 ngày";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById('ketqua').innerHTML = "Tháng " + Month + " chỉ có 30 ngày";
+                break;
+            case 2:
+                document.getElementById('ketqua').innerHTML = "Tháng " + Month + " có 28 hoặc 29 ngày tùy theo năm đó có phải năm nhuận không";
+                break;
+            default:
+                alert("Bạn đã nhập sai. Chỉ có 12 tháng và không có chữ cái nào");
+        }
+    }
+</script>
+</body>
+</html>

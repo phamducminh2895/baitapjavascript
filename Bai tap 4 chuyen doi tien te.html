@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+<form>
+<table style="width: 60%">
+    <th>
+        <td align="center" style="font-weight: bold;font-size: large"><div>Amount</div>
+            <input type="number" id="amount"></td>
+    <td align="center" style="font-weight: bold;font-size: large"><div>From Currency</div>
+            <select id="from-currency">
+                <option value="vnd">VND</option>
+                <option value="usd">USD</option>
+                <option value="yen">YEN</option>
+            </select></td>
+    <td align="center" style="font-weight: bold;font-size: large">
+            <div>To Currency</div>
+            <select id="to-currency">
+                <option value="usd">USD</option>
+                <option value="yen">YEN</option>
+                <option value="vnd">VND</option>
+            </select></td>
+        <td>
+            <div>
+                <button type="button" onclick="chuyendoi()"
+                style="background-color: blueviolet;color: white;
+                width: 90px;height: 30px; margin-top: 10px; margin-left: 30px; border-style: outset;
+                font-size: large; font-weight: bold">Covert</button>
+            </div>
+    </th>
+</table>
+            <p align="left" style="color: blue" id="doitien"></p>
+
+<script>
+    function chuyendoi() {
+        var text;
+        var Amount=document.getElementById('amount').value;
+        var FromCurrency=document.getElementById("from-currency").value;
+        var ToCurrency=document.getElementById("to-currency").value;
+        switch(FromCurrency){
+            case "vnd":
+                switch (ToCurrency){
+                    case "vnd":
+                        text=Amount*1+" VND";
+                        break;
+                    case "usd":
+                        text=Amount/22000+" USD";
+                        break;
+                    case "yen":
+                        text=Amount/200+" YEN";
+                        break;
+                }
+                break;
+            case "usd":
+                switch (ToCurrency){
+                    case "vnd":
+                        text=Amount*22000+" VND";
+                        break;
+                    case "usd":
+                        text=Amount*1+" USD";
+                        break;
+                    case "yen":
+                        text=(Amount*22000)/200+" YEN";
+                        break;
+                }
+                break;
+            case "yen":
+                switch (ToCurrency){
+                    case "vnd":
+                        text=Amount*200+" VND";
+                        break;
+                    case "usd":
+                        text=(Amount*200)/22000+ "USD";
+                        break;
+                    case "yen":
+                        text=Amount*1+" YEN";
+                        break;
+                }
+                break;
+        }
+        document.getElementById('doitien').innerHTML="Kết quả: "+ text;
+    }
+</script>
+</form>
+</body>
+</html>

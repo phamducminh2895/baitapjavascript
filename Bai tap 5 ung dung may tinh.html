@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<form>
+    <table style="width: 100px">
+        <tr>
+            <td align="center"><input type="number" value="" id="first"></td>
+            <td align="center"><input type="number" value="" id="second"></td>
+        </tr>
+    </table>
+    <br>
+    <table style="width: 100px" align="left">
+        <tr>
+            <td> <button type="button" onclick="cong()">Addition(+)</button></td>
+            <td> <button type="button" onclick="tru()">Subtraction(-)</button></td>
+            <td> <button type="button" onclick="nhan()">Multiplication(X)</button></td>
+            <td> <button type="button" onclick="chia()">Division(/)</button></td>
+        </tr>
+    </table>
+    <br>
+<p align="left" id="ketqua"></p>
+<script>
+    function cong(){
+        var a=parseInt(document.getElementById("first").value);
+        var b=parseInt(document.getElementById("second").value);
+        text=a+b;
+        document.getElementById("ketqua").innerHTML="Kết quả cộng: "+text;
+    }
+    function tru(){
+        var a=parseInt(document.getElementById("first").value);
+        var b=parseInt(document.getElementById("second").value);
+        text=a-b;
+        document.getElementById("ketqua").innerHTML="Kết quả trừ: "+text;
+    }
+    function nhan(){
+        var a=parseInt(document.getElementById("first").value);
+        var b=parseInt(document.getElementById("second").value);
+        text=a*b;
+        document.getElementById("ketqua").innerHTML="Kết quả nhân: "+text;
+    }
+    function chia(){
+        var a=parseInt(document.getElementById("first").value);
+        var b=parseInt(document.getElementById("second").value);
+        text=a/b;
+        document.getElementById("ketqua").innerHTML="Kết quả chia: "+text;
+    }
+</script>
+</form>
+</body>
+</html>

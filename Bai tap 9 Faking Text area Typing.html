@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Faking Text area Typing</title>
+    <script>
+
+        var a = new Array(),n="";
+        a[1]='G';a[2]='O';a[3]=' ';a[4]='F';a[5]='A';a[6]='K';a[7]=' ';a[8]='Y';a[9]='O';a[10]='U';a[11]='R';a[12]='S';a[13]='E';a[14]='L';a[15]='F';a[16]='!';a[17]='!';
+        function typeTextarea(){
+            t = document.m.txt.value;
+            j = t.length;
+            if(j > 0)
+            {
+                for(var i=1; i<=j; i++)
+                {
+                    n = n + a[i];
+                    if(i == 22)
+                    {
+                        document.m.txt.value = "";
+                        n = "";
+                    }
+                }
+            }
+            document.m.txt.value = n;
+            n="";
+            setTimeout("typeTextarea()", 1);
+        }
+    </script>
+</head>
+<body>
+<div style="font-size: 20px; font-weight: bold">
+    <center>
+        Nhập chữ vào hộp bên dưới
+        <br>
+        <form name="m">
+            <textarea name="txt" cols="35" rows="5" onkeydown="typeTextarea();"></textarea>
+        </form>
+    </center>
+</div>
+</body>
+</html>

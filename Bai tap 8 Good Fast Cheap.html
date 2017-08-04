@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Good-Fast-Cheap</title>
+</head>
+<body>
+<form>
+    <pre style="font-size: large;">
+        <h1>Good-Fast-Cheap</h1>
+        <input type="checkbox" id="good" name="class" onclick="checkbox1()"><label for="good">Good</label>
+        <input type="checkbox" id="fast" name="class" onclick="checkbox2()"><label for="fast">Fast</label>
+        <input type="checkbox" id="cheap" name="class" onclick="checkbox3()"><label for="cheap">Cheap</label>
+    </pre>
+    <script>
+        function checkbox1() {
+            var good = document.getElementById("good");
+            var fast = document.getElementById("fast");
+            var cheap = document.getElementById("cheap");
+            if(cheap.checked==true){
+                if(fast.checked==true){
+                    if(good.checked==true){
+                        document.getElementById("fast").checked=false;
+                    }
+                }
+            }
+        }
+        function checkbox2() {
+            var good = document.getElementById("good");
+            var fast = document.getElementById("fast");
+            var cheap = document.getElementById("cheap");
+            if(cheap.checked==true){
+                if(fast.checked==true){
+                    if(good.checked==true){
+                        document.getElementById("good").checked=false;
+                    }
+                }
+            }
+        }
+        function checkbox3() {
+            var good = document.getElementById("good");
+            var fast = document.getElementById("fast");
+            var cheap = document.getElementById("cheap");
+            if(cheap.checked==true){
+                if(fast.checked==true){
+                    if(good.checked==true){
+                        document.getElementById("fast").checked=false;
+                    }
+                }
+            }
+        }
+    </script>
+</form>
+</body>
+</html>
